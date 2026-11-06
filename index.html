@@ -12,14 +12,37 @@
     inset: 0;
     z-index: 0;
     pointer-events: none;
+    overflow: hidden;
 
-    background-image:
-        url("https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1200");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(
+        180deg,
+        #8acdf5 0%,
+        #b9e4fa 50%,
+        #e8f7ff 100%
+    );
 }
+
+.cloud-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(ellipse 75px 35px at 8% 20%, #fff 98%, transparent 100%),
+        radial-gradient(ellipse 95px 45px at 17% 18%, #fff 98%, transparent 100%),
+        radial-gradient(ellipse 75px 32px at 26% 22%, #fff 98%, transparent 100%),
+
+        radial-gradient(ellipse 80px 35px at 68% 38%, #fff 98%, transparent 100%),
+        radial-gradient(ellipse 105px 48px at 79% 35%, #fff 98%, transparent 100%),
+        radial-gradient(ellipse 75px 34px at 89% 39%, #fff 98%, transparent 100%),
+
+        radial-gradient(ellipse 80px 35px at 15% 78%, #fff 98%, transparent 100%),
+        radial-gradient(ellipse 105px 45px at 26% 75%, #fff 98%, transparent 100%),
+        radial-gradient(ellipse 75px 32px at 36% 79%, #fff 98%, transparent 100%);
+
+    filter: drop-shadow(0 8px 12px #ffffff55);
+}
+
 <style>
 * {
     box-sizing: border-box;
@@ -340,6 +363,8 @@ body {
 </head>
 
 <body>
+    <div class="cloud-background"></div>
+<div class="glow"></div>
 
 <div class="glow"></div>
 
