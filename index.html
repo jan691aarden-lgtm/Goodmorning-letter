@@ -7,7 +7,19 @@
 <title>A Morning Surprise ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+.cloud-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
 
+    background-image:
+        url("https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1200");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 <style>
 * {
     box-sizing: border-box;
@@ -17,7 +29,12 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg,#3c172e,#853d61,#e6a1b5);
+    background: linear-gradient(
+        180deg,
+        #62b6ed 0%,
+        #a6dcfa 45%,
+        #eaf8ff 100%
+    );
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
@@ -25,7 +42,9 @@ body {
     padding: 25px 15px;
     overflow-x: hidden;
     color: #704354;
+    position: relative;
 }
+
 
 .glow {
     position: fixed;
@@ -314,7 +333,7 @@ body {
 </head>
 
 <body>
-
+<div class="cloud-background"></div>
 <div class="glow"></div>
 
 <button class="music" onclick="toggleMusic()" id="musicBtn">
