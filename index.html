@@ -16,17 +16,43 @@
 }
     .cloud-background {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
     pointer-events: none;
-
-    background-image:
-        url("https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1200");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(
+        to bottom,
+        #87ceeb,
+        #c9eafa,
+        #f0faff
+    );
 }
+
+.cloud-background::before {
+    content: "☁️       ☁️          ☁️";
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    font-size: 65px;
+    letter-spacing: 15px;
+    white-space: nowrap;
+    opacity: 0.9;
+}
+
+.cloud-background::after {
+    content: "☁️           ☁️       ☁️";
+    position: absolute;
+    top: 55%;
+    left: 0;
+    width: 100%;
+    font-size: 75px;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
 
 body {
     
@@ -91,6 +117,7 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
+
 }
 
 .intro {
@@ -354,7 +381,8 @@ body {
 </head>
 
 <body>
-
+    
+<div class="cloud-background"></div>
 <div class="glow"></div>
 
 <button class="music" onclick="toggleMusic()" id="musicBtn">
