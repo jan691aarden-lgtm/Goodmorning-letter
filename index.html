@@ -17,7 +17,20 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg,#3c172e,#853d61,#e6a1b5);
+
+    background:
+        radial-gradient(ellipse 100px 45px at 12% 22%, #ffffff 70%, transparent 72%),
+        radial-gradient(ellipse 130px 55px at 22% 22%, #ffffff 70%, transparent 72%),
+        radial-gradient(ellipse 100px 45px at 32% 22%, #ffffff 70%, transparent 72%),
+
+        radial-gradient(ellipse 110px 45px at 68% 42%, #ffffff 70%, transparent 72%),
+        radial-gradient(ellipse 140px 60px at 78% 42%, #ffffff 70%, transparent 72%),
+        radial-gradient(ellipse 100px 45px at 88% 42%, #ffffff 70%, transparent 72%),
+
+        linear-gradient(180deg, #68bdf0, #b8e5ff, #eaf8ff);
+
+    background-attachment: fixed;
+
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
@@ -25,6 +38,7 @@ body {
     padding: 25px 15px;
     overflow-x: hidden;
     color: #704354;
+}
 }
 
 .glow {
