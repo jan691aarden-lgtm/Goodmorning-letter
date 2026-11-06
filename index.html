@@ -421,7 +421,7 @@ function openLetter() {
         document.getElementById("intro").style.display="none";
         document.getElementById("envelope").style.display="none";
         document.getElementById("letter").classList.add("show");
-        startMusic();
+      
     }, 1300);
 }
 
@@ -466,35 +466,26 @@ function playNote(freq,duration) {
 
     oscillator.start();
     oscillator.stop(audioContext.currentTime+duration);
-}
 
-function startMusic() {
-    if(!audioContext) {
-        audioContext=new (window.AudioContext || window.webkitAudioContext)();
+  
     }
-
-    audioContext.resume();
-    musicPlaying=true;
-
-    const notes=[523.25,659.25,783.99,659.25,587.33,698.46,783.99,659.25];
-    let index=0;
-
-    clearInterval(musicTimer);
-
-    musicTimer=setInterval(()=>{
-        if(!musicPlaying) return;
-        playNote(notes[index],1.1);
-        index=(index+1)%notes.length;
-    },650);
-
-    document.getElementById("musicBtn").innerHTML="🎵 Pause Music";
-}
+  
+  const music = document.getElementById("bgMusic");
 
 function toggleMusic() {
-    if(!audioContext) {
-        startMusic();
-        return;
+    if (music.paused) {
+        music.play().then(() => {
+            document.getElementById("musicBtn").innerHTML =
+                "🎵 Pause Music";
+        }).catch(() => {
+            alert("Please tap Play Music again.");
+        });
+    } else {
+        music.pause();
+        document.getElementById("musicBtn").innerHTML =
+            "🎵 Play Music";
     }
+
 
     musicPlaying=!musicPlaying;
 
@@ -506,7 +497,9 @@ function toggleMusic() {
         document.getElementById("musicBtn").innerHTML="🎵 Play Music";
     }
 }
+
 </script>
 
 </body>
 </html>
+
