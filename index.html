@@ -9,19 +9,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 .cloud-background {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     z-index: 0;
     pointer-events: none;
-    background: linear-gradient(
-        to bottom,
-        #87ceeb,
-        #c9eafa,
-        #f0faff
-    );
+
+    background-image:
+        url("https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1200");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 
 .cloud-background::before {
     content: "☁️       ☁️          ☁️";
